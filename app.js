@@ -11,6 +11,8 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname,'app_server', 'views'));
+// app.engine("html", require("ejs").renderFile);
+// app.set("view engine", "html");
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));

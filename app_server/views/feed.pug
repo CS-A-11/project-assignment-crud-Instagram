@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  header.masthead
+    .container.h-100
+        .row.h-100
+          .col-lg-7.my-auto
+            .header-content.mx-auto
+              input(type="file",id="upload")
+              a#uploadMyFile1.btn.btn-outline.btn-xl.js-scroll-trigger(href='') UPLOAD POST
+              |  
+              |
+              input(type="file",id="uploadStory") 
+              a#uploadMyFile2.btn.btn-outline.btn-xl.js-scroll-trigger(href='') UPLOAD STORY
+              br
+              br
+              hr
+
+              h1.mb-5 Some things will come here (not decided yet)
+          .col-lg-5.my-auto
+            .device-container
+              h2(style="font-family:'Billabong';text-align: center;") Stories
+              .checkOverflow
+                .changeFont
+                  - var index1 = 0;
+                  each entry in story
+                    p                   
+                      img.storyImg(src=entry.img,alt="")
+                      |   
+                      |  
+                      =entry.name
+                  - index1++;    
+                      
+    
+  section.backgroundRest
+    h2(style="font-family:'Billabong';text-align: center;color:black;") My Feed
+    .container
+      .row
+        .col-md-8.mx-auto
+          .badges  
+            - var index2=0;
+            each entry2 in allUploads
+              h4(style="font-family: 'Billabong';color:black")=entry2.name
+              img.feedImage(src=entry2.img, alt="")
+              br
+              hr
+            - index2++;
+                    
+ 
+                    
