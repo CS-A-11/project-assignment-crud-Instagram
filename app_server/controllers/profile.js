@@ -1,5 +1,5 @@
 module.exports.profilePage = function(req, res)
-{   res.render('profile', { 
+{   res.render('profileLayout', { 
     title: 'Insta Profile',
     username:"meharfatimakhan",
     bio:"CS Student at FAST",
