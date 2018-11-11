@@ -1,0 +1,55 @@
+extends layout
+ 
+block content
+  section
+      .container
+        .row.align-items-center
+          .col-lg-6
+            .p-5
+              img.img-fluid.rounded-circle(src='img/bg-cta.jpg', alt='')
+          .col-lg-6
+            .p-5
+              h2(style="color:white;font-family: 'Billabong'")
+                b 
+                  =username
+                |  
+                |  
+              a.js-scroll-trigger(style='color:white', href='#portfolio')
+                b  
+                  =posts   
+                  |  posts
+                |  
+                |  
+                |  
+              a(style='color:white', href='./Followers')
+                b 
+                  =followers   
+                  |  followers
+                |  
+                |  
+                |      
+              a(style='color:white', href='./Following')
+                b 
+                  =following
+                  |  following
+                |  
+                |  
+                |  
+              br
+              br
+              b(style='color:white')
+                =bio
+      section#portfolio
+        .container
+          .row
+            .col-lg-12.text-center
+              h2.section-heading(style="color:white;font-family: 'Billabong'") portfolio
+              br
+          .row
+            -var index=0;
+            each entry in uploads
+              .col-md-4.col-sm-6.portfolio-item
+                a.portfolio-link(data-toggle='modal', href='#portfolioModal1')
+                  img.img-fluid.feedImage(src=entry.img, alt='')
+            -index++;
+            

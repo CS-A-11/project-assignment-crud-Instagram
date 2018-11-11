@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  br
+  br
+  br
+  .container
+      a(href='/profile' style="color:white")
+        h1.my-4(style="color:white;font-family:'Billabong'") meharfatima
+      
+      .row
+        .col-md-8
+          img.img-fluid(src='http://placehold.it/750x500', alt='')
+          br
+        .col-md-4
+          h4.my-3(style="color:white;font-family:'Billabong'") Post Description
+          | 
+          a(href='#likeIt')
+            i.fa.fa-heart-o(style='color:white;font-size:25px')
+          |    
+          a(href='#likeIt')
+            i.fa.fa-comments-o(style='color:white;font-size:25px')
+          |    
+          |    
+          br
+          br
+          p(style='color:rgb(228, 183, 183)') I am a comment!
+          .form-group(style='color:white')
+            .col-md-9(display='inline-block')
+              input.form-control(type='text', placeholder='Type a comment..')
+            
+  .container
+    br  

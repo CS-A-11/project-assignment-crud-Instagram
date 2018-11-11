@@ -1,12 +1,12 @@
 module.exports.profilePage = function(req, res)
-{   res.render('profileLayout', { 
-    title: 'Insta Profile',
+{   res.render('profile', { 
+    displayPicture:"https://i.ytimg.com/vi/mSnMTMlJzME/maxresdefault.jpg",
     username:"meharfatimakhan",
     bio:"CS Student at FAST",
     followers:3,
     following:3,
     posts:5,
-    uploadss:[
+    uploads:[
             {
                 img:"https://i.ytimg.com/vi/mSnMTMlJzME/maxresdefault.jpg"
             },

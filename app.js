@@ -1,28 +1,125 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var favicon=require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser=require('body-parser');
+var session=require('express-session');
+var passport=require('passport');
+var expressValidator = require('express-validator');
+var LocalStrategy=require('passport-local').Strategy;
+var multer=require('multer');
+var upload=multer({dest:'./uploads'});
+var flash=require('connect-flash');
+var bcrypt=require('bcryptjs');
+var request = require('request');
+var db= require("./app_server/models/db");
+var MongoStore = require("connect-mongo")(session);
 
+var db=require('./app_server/models/db');
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
+//var routesApi = require("./app_api/routes/index");
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname,'app_server', 'views'));
-// app.engine("html", require("ejs").renderFile);
-// app.set("view engine", "html");
 app.set('view engine', 'pug');
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
+
+// app.use(
+//   session({
+//     secret: "work hard",
+//     resave: true,
+//     saveUninitialized: false,
+//     store: new MongoStore({
+//       mongooseConnection: db
+//     })
+//   })
+// );
+// app.use("/", function(req, res, next) {
+//   if (req.session.userId) {
+//     res.locals.user = req.session.userId;
+//     res.locals.userName = req.session.userName;
+//   }
+//   next();
+// });
+
+
+app.post('/', function(req, res, next) {
+  console.log('in login post!');
+  console.log('body parsing: ' + req.body.username + ' ' + req.body.password);
+  passport.authenticate('local', function(err, user, info) {
+    if (err) {
+      console.log('passport err: ' + err);
+      return next(err);
+    }
+    if (!user) {
+      console.log('no user found!');
+      return res.redirect('/');
+    }
+    req.logIn(user, function(err) {
+      if (err) {
+        console.log('login error: ' + err);
+        return next(err);
+      }
+      return res.redirect('/feed');
+    });
+  })(req, res, next);
+});
+
+//handle sessions
+app.use(session({
+  secret:'secret',
+  saveUninitialized:true,
+  resave:true
+}));
+
+//passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+//validate
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+      var namespace = param.split('.')
+      , root    = namespace.shift()
+      , formParam = root;
+
+    while(namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg   : msg,
+      value : value
+    };
+  }
+}));
+
+
+
+app.use(require('connect-flash')());
+app.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+//app.use("/api", routesApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

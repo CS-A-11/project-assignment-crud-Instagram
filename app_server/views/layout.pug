@@ -5,21 +5,24 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     meta(name='description', content='')
     meta(name='author', content='')
-    title=title
-    link(rel='icon', type='image/ico', href='/img/logo.jpg')  
-    link(href='/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')   
+    title Instagram
+    link(rel='icon', type='image/ico', href='/img/logo.jpg')
+    link(href='/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
     link(href='/vendor/fontawesome-free/css/all.min.css', rel='stylesheet')
     link(rel='stylesheet', href='/vendor/simple-line-icons/css/simple-line-icons.css')
     link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Muli', rel='stylesheet')   
+    link(href='https://fonts.googleapis.com/css?family=Muli', rel='stylesheet')
     link(rel='stylesheet', href='/device-mockups/device-mockups.min.css')
     link(href='/css/new-age.min.css', rel='stylesheet')
-    link(href='/vendor/magnific-popup/magnific-popup.css', rel='stylesheet', type='text/css')
-    link(href='/css/freelancer.min.css', rel='stylesheet')
     link(rel='stylesheet', type='text/css', href='/style.css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
     style.
+      .backgroundRest{
+      background-image: url('img/khoob.jpg');
+      background-attachment:fixed;
+      background-repeat: no-repeat;
+      }
       #search{
       position: fixed;
       top: 0px;
@@ -112,11 +115,11 @@ html(lang='en')
       background-color: transparent;
       width: 330px;
       height: 400px;
-      /*overflow:auto;*/
-      overflow-x:hidden;
-      overflow-y:scroll;
+      /* border: 1px dotted black; */
+      overflow-x: hidden;
+      overflow-y: scroll;
       }
-      .changeFont {
+      .changeFont{
       font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       position: relative;
       top:20px;
@@ -128,60 +131,30 @@ html(lang='en')
       width: 20%;
       }
       img.feedImage {
-        border-radius: 8px;
-      }
-      .backgroundRest {
-        background-image: url('img/instasmile.jpeg');
-        background-attachment:fixed;
-        background-repeat: no-repeat;
-      }
-      .profilePicture {
-      border-radius: 50%;
-      width:250px;
-      border-color:black;
-      }
-      /*making edit Profile button */
-      .editProfile {
-      background-color: white;
-      color: black;
-      cursor: pointer;
-      border: 2px solid grey;
-      border-radius:5px;
+      border-radius: 8px;
       }
       /*making e responsive grid of pictures */
-      .myPosts {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 1px 1px;
-      padding-bottom: 1px;
-      }
-      /*adjusting height width of each image */
-      .eachImage {
-      width: 280px;
-      height: 300px;
-      }
-      /* making each post appearing relative to each other adjusting the distance and making it responsive*/
-      .singlePost {
-      position: relative;
-      flex: 1 0 22rem;
-      margin: 2px;
-      }
-      #upload{
+      
+       #upload{
         display:none;
       }
       #uploadStory{
         display:none;
       }
-  block head
-  body#page-top 
+      
+    
+
+  body#page-top.backgroundRest
+    
     nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
       .container
         a(href='/')
-          i.fa.fa-instagram(style='color:black;font-size:42px;')
+          i.fa.fa-instagram(style='color:rgb(228, 183, 183);font-size:42px;')
+            |  |
             |  
-            span.navbar-brand.js-scroll-trigger(style="font-family:'Billabong';font-size:42px;font-weight:normal;color:black;display:inline-block")
-              | | Instagram
-        button.navbar-toggler.navbar-toggler-right(type='button',style="font-family: 'Billabong';color: black;", data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-brand.js-scroll-trigger(style="font-family:'Billabong';font-size:42px;font-weight:normal;color:rgb(228, 183, 183);display:inline-block")
+              | Instagram
+        button.navbar-toggler.navbar-toggler-right(style="font-family: 'Billabong';color:rgb(228, 183, 183);", type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
           | Menu
           i.fas.fa-bars
         #navbarResponsive.collapse.navbar-collapse
@@ -189,27 +162,33 @@ html(lang='en')
             li.nav-item
               a.nav-link.js-scroll-trigger(display='inline-block', href='#searchIt')
                 div(id='#search')
-                  i.fa.fa-search(style='color:black;font-size:42px;')
+                  i.fa.fa-search(style='color:rgb(228, 183, 183);font-size:42px;')
                 #search
                   span.close X
                   form#searchform(role='search', action='/search', method='get')
                     input(value='', name='q', type='search', placeholder='type to search')
             li.nav-item
               a.nav-link.js-scroll-trigger(href='#likeIt')
-                i.fa.fa-heart(style='color:black;font-size:42px;')
+                i.fa.fa-heart(style='color:rgb(228, 183, 183);font-size:42px;')
             li.nav-item
               a.nav-link.js-scroll-trigger(href='/direct-message')
-                i.fa.fa-envelope(style='color:black;font-size:42px;')
+                i.fa.fa-envelope(style='color:rgb(228, 183, 183);font-size:42px;')
             li.nav-item
               a.nav-link.js-scroll-trigger(href='/profile')
-                i.fa.fa-user(style='color:black;font-size:42px;')
-   
-    
+                i.fa.fa-user(style='color:rgb(228, 183, 183);font-size:42px;')
+    //- br
+    //- br
+    //- br
+    //- br
+    //- .container
+    //-   .row
+    //-     .col-md-9
+    //-       !=messages()
     block content
       
     footer
       .container
-        p © Your Website 2018. All Rights Reserved.
+        p © Instagram 2018. All Rights Reserved.
         ul.list-inline
           li.list-inline-item
             a(href='#') Privacy
@@ -217,11 +196,11 @@ html(lang='en')
             a(href='#') Terms
           li.list-inline-item
             a(href='#') FAQ
+ 
     script(src='/vendor/jquery/jquery.min.js')
-    script(src='/vendor/bootstrap/js/bootstrap.bundle.min.js')   
-    script(src='/vendor/jquery-easing/jquery.easing.min.js') 
+    script(src='/vendor/bootstrap/js/bootstrap.bundle.min.js')
+  
+    script(src='/vendor/jquery-easing/jquery.easing.min.js')
+  
     script(src='/js/new-age.min.js')
     script(src='/myJS.js')
-
-   
-     
