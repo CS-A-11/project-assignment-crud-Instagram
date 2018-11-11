@@ -14,11 +14,11 @@ block content
                   =username
                 |  
                 |  
-                a(style='color:white', href='/editprofile')
+                a(style='color:white', href='/edit')
                   i.fa.fa-edit(style='color:white;font-size:30px;')
                 |  
                 |  
-                a(style='color:white', href='/login')
+                a(style='color:white', href='/')
                   i.fa.fa-sign-out(style='color:white;font-size:30px;')
               a.js-scroll-trigger(style='color:white', href='#portfolio')
                 b  
@@ -27,14 +27,14 @@ block content
                 |  
                 |  
                 |  
-              a(style='color:white', href='./Followers')
+              a(style='color:white', href='/followers')
                 b 
                   =followers
                   |  followers   
                 |  
                 |  
                 |      
-              a(style='color:white', href='./Following')
+              a(style='color:white', href='/following')
                 b 
                   =following 
                   |  following
@@ -54,6 +54,6 @@ block content
             -var index=0;
             each entry in uploads
               .col-md-4.col-sm-6.portfolio-item
-                a.portfolio-link(data-toggle='modal', href='#portfolioModal1')
+                a.portfolio-link( href='/post')
                   img.img-fluid.feedImage(src=entry.img, alt='')
             -index++;

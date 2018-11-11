@@ -25,3 +25,24 @@ module.exports.profilePage = function(req, res)
         ]
     });
 };
+
+
+module.exports.edit = function(req, res)
+{   res.render('editProfile');
+}
+
+module.exports.followers = function(req, res)
+{   res.render('followers');
+}
+module.exports.following = function(req, res)
+{   res.render('following');
+}
+
+
+module.exports.post = function(req, res)
+{   res.render('post');
+}
+
+module.exports.story = function(req, res)
+{   res.render('story');
+}

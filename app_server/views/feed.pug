@@ -13,7 +13,7 @@ block content
             .changeFont
               -var index=0;
               each entry in story
-                a(href='/profile', style="font-family:'Billabong';color:white;font-size: 30px")
+                a(href='/story', style="font-family:'Billabong';color:white;font-size: 30px")
                   p
                     img.storyImg(src=entry.img, display='inline')
                     |      
@@ -31,7 +31,7 @@ block content
           a#uploadMyFile2.btn.btn-outline.btn-xl.js-scroll-trigger(href='') Upload Photo
           br
           br
-          a.btn.btn-outline.btn-xl.js-scroll-trigger(href='/profile/edit') Edit Profile
+          a.btn.btn-outline.btn-xl.js-scroll-trigger(href='/edit') Edit Profile
           br
           br
           a.btn.btn-outline.btn-xl.js-scroll-trigger(href='/login') Sign Out
@@ -45,7 +45,7 @@ block content
           -var index1=0;
           each entry in allUploads
             .col-md-3.col-sm-6.mb-4
-              a(href='#')
+              a(href='/post')
                 p(style="font-family:'Billabong';color:white;font-size: 27px") 
                   =entry.name
                 img.img-fluid(src=entry.img, alt='')

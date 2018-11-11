@@ -30,8 +30,11 @@ var ctrlSignUp = require("../controllers/SignUpPage");
 
 router.get("/feed", ctrlMain.index);
 router.get("/profile", ctrlProfile.profilePage);
-router.get("/direct-message", ctrlDM.directMessage);
-
+router.get("/edit", ctrlProfile.edit);
+router.get("/followers", ctrlProfile.followers);
+router.get("/following", ctrlProfile.following);
+router.get("/story", ctrlProfile.story);
+router.get("/post", ctrlProfile.post);
 
 router.get("/", ctrlLogin.loginCredentials);
 router.post("/",passport.authenticate('local',{
