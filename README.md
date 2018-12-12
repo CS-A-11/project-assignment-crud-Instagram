@@ -14,8 +14,18 @@
 7) User can also view his following's stories on feed.
 
 Division: 
+
+
 Nimra Ijaz : Session Management and AJAX
+
+
 Mehar Fatima: Session Management, CRUD Operations, and front-end
+
+
 Minahil Imtiaz: Front-end and follower/following CRUDs
+
+
 Shaheer:Front-end and AJAX 
+
+
 Zarfishan:Front-end and CRUDS
