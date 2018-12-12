@@ -13,19 +13,21 @@
 6) User can delete his profile.
 7) User can also view his following's stories on feed.
 
-Division: 
+Schema:
 
+1) Users Schema: username, ID, Bio, ProfilePicture, Array of Followers/Following
+2) Photo Schema: username, ID, PictureID(path), Caption
+3) Story Schema: username, ID, PictureID(path)
+
+
+Division: 
 
 Nimra Ijaz : Session Management and AJAX
 
-
 Mehar Fatima: Session Management, CRUD Operations, and front-end
-
 
 Minahil Imtiaz: Front-end and follower/following CRUDs
 
-
 Shaheer:Front-end and AJAX 
-
 
 Zarfishan:Front-end and CRUDS
