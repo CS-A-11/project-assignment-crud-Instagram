@@ -11,7 +11,7 @@
 4) User can follow and unfollow people. If he follows them, they'll be added in his following lists and said person's follower list.
 5) User can edit his profile: change password/ bio /picture. 
 6) User can delete his profile.
-7) User can also view his following's stories on feed.
+7) User can also view his following's stories and pictures on feed.
 
 Schema:
 
