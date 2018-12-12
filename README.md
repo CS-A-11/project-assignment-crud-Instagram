@@ -1,6 +1,6 @@
 -->AJAX: 
-1) Auto-completion (e.g. using a search text box for searching users.)
-2) Remote validation (e.g. in registration scenario, if the username in database, then inform the user)
+1) Auto-completion (using a search text box for searching users.)
+2) Remote validation (in registration scenario, if the username in database, then inform the user)
 
 -->Session Management done
 
